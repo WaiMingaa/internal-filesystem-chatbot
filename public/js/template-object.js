@@ -32,7 +32,7 @@ var templateObject = (function () {
             case 'casenumber':
                 return _buildcasenumber(content);
                 break;
-            case 'doc'
+            case 'doc':
                 return _buildDocument(content);
         }
     }
@@ -182,21 +182,25 @@ var templateObject = (function () {
         str += '</div>';
         return str;
     }
+
     function _buildDocument(content){
-        var strVar="<div class=\"ui link items\">"
-        strVar +="<a target=\"_self\" href=\""+content.url+"\" >";
+        var strVar="<div class=\"ui items\">"
         strVar += " <div class=\"item\">";
+        strVar +="<a target=\"_blank\" href=\""+content.url+"\" >";
         strVar += "    <div class=\"ui tiny image\">";
         strVar += "      <img src=\""+content.img+"\">";
         strVar += "    <\/div>";
+        strVar+=" <\/a>";
         strVar += "    <div class=\"content\">";
         strVar += "      <div class=\"header\">"+content.header+"<\/div>";
+        strVar +=           "<div class=\"meta\">";
+        strVar +="<span class=\"price\">"+content.size+"</span> <span class=\"stay\">"+content.createby+"</span> </div>";
         strVar += "      <div class=\"description\">";
         strVar += "        <p>"+content.description+"<\/p>";
         strVar += "      <\/div>";
         strVar += "    <\/div>";
         strVar += "  <\/div>";
-        strVar +="<\/a><\/div>";
+        strVar +="<\/div>";
         return strVar;
     }
 })();
