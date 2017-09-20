@@ -32,6 +32,8 @@ var templateObject = (function () {
             case 'casenumber':
                 return _buildcasenumber(content);
                 break;
+            case 'doc'
+                return _buildDocument(content);
         }
     }
 
@@ -182,10 +184,10 @@ var templateObject = (function () {
     }
     function _buildDocument(content){
         var strVar="<div class=\"ui link items\">"
-        strVar +="<a target=\"_self\" href=\""++"\" >";
+        strVar +="<a target=\"_self\" href=\""+content.url+"\" >";
         strVar += " <div class=\"item\">";
         strVar += "    <div class=\"ui tiny image\">";
-        strVar += "      <img src=\""+content.url+"\">";
+        strVar += "      <img src=\""+content.img+"\">";
         strVar += "    <\/div>";
         strVar += "    <div class=\"content\">";
         strVar += "      <div class=\"header\">"+content.header+"<\/div>";
